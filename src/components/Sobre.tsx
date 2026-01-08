@@ -1,6 +1,6 @@
 
 import "../assets/css/sobre.css"
-import Banner from '../assets/img/banner-logo.png'
+
 
 function Sobre() {
   return (
