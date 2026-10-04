@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/projeto-agencia-de-emprego/', // 👈 MUITO IMPORTANTE
+  // 👈 MUITO IMPORTANTE
   plugins: [
     react({
       babel: {
