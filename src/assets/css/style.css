@@ -1,258 +1,44 @@
-/* Faz o body ocupar a altura total da tela e usa flexbox */
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  .auth-section {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* espaço entre ícone e botão */
-  }
-  
-  .perfil img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-  }
-  
-.perfil:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-  
-  main {
-    flex: 1; /* Isso empurra o footer para o final */
-  }
-     .navbar-custom {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
+/* Estilos exclusivos da Home (todas as classes começam com "home-") */
 
-    .navbar-brand {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .nav-login-btn a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .nav-login-btn {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      margin-left: 1rem;
-    }
-    *{
-    padding: 0;
-    margin: 0;
-    
-}
-.nav-item a{
-    font-size: 120%;
-}
-.mt-4  a{
-   width: 50%;
-   margin-left: 25%;
-   border-radius: 999px;
-  
-}
-.text-white{
- padding: 8%;
-
-}
-.cin{
-    background-color:#d9d9d9 ;
-    padding: 2%;
-    padding-left: 20%;
-    border-radius: 999px;
-}
-.btn-1{
-   padding-left: 15%;
-   padding-right: 18%;
-   border: none;
-   background-color: #d9d9d9;
-    
-}
-.btn-2{
-      padding-left: 15%;
-   padding-right: 15%;
-   border: none;
-   background-color: #d9d9d9;
-}
-.btn-1.active{
-    background-color: white;
-    border: #000 1px solid;
-    border-radius: 999px;
-}
-.btn-1:hover{
-     background-color: white;
-    border: #000 1px solid;
-    border-radius: 999px;
-}
-.btn-2:hover{
-    background-color: white;
-    border: #000 1px solid;
-    border-radius: 999px;
-}
-img{
-    width: 55%;
-}
-.img-cin-sup{
-    display: flex;
-}
-.img-cin-1{
-    margin-top:10% ;
-    padding:2%;
-    margin-left: 2%;
-    text-align: center;
-    border-radius: 2%;
-
-background-color: #d9d9d9;
- margin-bottom: 5%;
-
-}
-.ative{
-    background-color: #fff;
-    border: #000 solid 1px;
-}
-.img-cin-2{
-    margin-top:10% ;
-    padding:2%;
-    margin-left: 2%;
-    text-align: center;
-    border-radius: 2%;
-
-background-color: #d9d9d9;
- margin-bottom: 5%;
+.home-title {
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1e1f21;
 }
 
-.img-cin-1 img:hover{
-    background-color: #fff;
-    border: #000 solid 1px;
-
-}
-.img-cin-2 img:hover{
-    background-color: #fff;
-    border: #000 solid 1px;
-
+.home-hero-img {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30, 31, 33, 0.12);
 }
 
-form{
-    padding-left: 10%;
-    padding-right: 10%;
-}
-input[type = "text"],
-input[type = "password"],
-input[type = "submit"],
-input[type = "email"]
-{
-    width: 100%;
-    border-radius: 999px;
-
-}
-input[type ="submit"]{
-    background-color: #000;
-    color: #fff;
-    border: none;
-}
-input[type ="submit"]:hover{
-    background-color: #fff;
-    color: #000;
-    border: solid 1px #000;
-}
-.sem-senha{
-    text-align: center;
-}
-
-.escola{
-    border-radius: 999px ;
-    width: 100%;
-}
-.hidden{
-    display: none;
-}
-
-/* ==================== BOTÕES LOGIN / CADASTRO ==================== */
-
-.btn-custom {
-  padding: 10px 40px;
-  border: none;
-  background-color: #d9d9d9;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #000;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin: 5px;
-}
-
-.btn-custom:hover {
-  background-color: #fff;
-  border: 1px solid #000;
-}
-
-.btn-custom.ativo {
-  background-color: #fff;
-  border: 1px solid #000;
-}
-
-/* ==================== TRANSIÇÃO SUAVE DOS FORMULÁRIOS ==================== */
-
-.formulario-container {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.formulario-container.login,
-.formulario-container.cadastro {
-  opacity: 1;
-  transform: translateY(0);
-}
-.btn-custom {
+/* Faixa escura com os números */
+.home-stats {
   background-color: #1e1f21;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
-
-  padding: 8px 18px !important; /* 🔥 força o mesmo tamanho */
-  width: auto !important;       /* garante que não fique largo demais */
-  height: 38px !important;      /* 🔥 mesma altura para todos */
-text-align: center;
-  white-space: nowrap;          /* impede quebrar linha */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  color: #fff;
 }
 
-.btn-custom:hover {
-  background-color: #2a2c2e;
-}
-.btn-custom{
-  width: 130px !important; 
-}
-.btn-link{
-  color:#fff;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-.btn-link:hover{
-  color: #fff
+.home-stat {
+  padding-left: 1.25rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-.aume{
-  font-size: 150%;
+.home-stat-valor {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
- .preto{
-  color: #000;
- }
 
+.home-stat-texto {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  max-width: 28ch;
+}
 
+/* Motivos */
+.home-motivo {
+  border-top: 3px solid #1e1f21;
+  padding-top: 1rem;
+}
