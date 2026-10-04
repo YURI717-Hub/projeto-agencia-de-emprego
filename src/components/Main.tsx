@@ -1,5 +1,5 @@
 import '../assets/css/style.css'
-import '../assets/css/home.css'
+
 import pessoa from '../assets/img/pessoa.png'
 import { Link } from 'react-router-dom'
 
