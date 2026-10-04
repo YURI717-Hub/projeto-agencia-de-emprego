@@ -1,44 +1,312 @@
-/* Estilos exclusivos da Home (todas as classes começam com "home-") */
+/* ==================== VARIÁVEIS ==================== */
 
-.home-title {
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #1e1f21;
+:root {
+  --cor-escura: #1e1f21;
+  --cor-escura-hover: #2a2c2e;
+  --cor-cinza: #d9d9d9;
 }
 
-.home-hero-img {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(30, 31, 33, 0.12);
+/* ==================== BASE ==================== */
+
+/* Faz o body ocupar a altura total da tela */
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-/* Faixa escura com os números */
-.home-stats {
-  background-color: #1e1f21;
+/* Coluna flex: faz o "main { flex: 1 }" empurrar o footer para o final.
+   (Header, main e footer precisam ser filhos diretos do #root.) */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Isso empurra o footer para o final */
+}
+
+img {
+  width: 55%;
+  max-width: 100%; /* nunca estoura o container */
+}
+
+/* ==================== NAVBAR ==================== */
+
+.navbar-custom {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-item a {
+  font-size: 120%;
+}
+
+.nav-login-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-login-btn {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre ícone e botão */
+}
+
+.perfil img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.perfil {
+  transition: transform 0.2s ease;
+}
+
+.perfil:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ==================== REGRAS GERAIS (atenção) ==================== */
+
+/* Atinge qualquer link dentro de .mt-4 */
+.mt-4 a {
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 999px;
+}
+
+/* Atinge qualquer elemento com .text-white (cards, footer, etc.) */
+.text-white {
+  padding: 8%;
+}
+
+/* ==================== MODAL: ABAS LOGIN / CADASTRO ==================== */
+
+.cin {
+  background-color: var(--cor-cinza);
+  padding: 2%;
+  padding-left: 20%;
+  border-radius: 999px;
+}
+
+.btn-1,
+.btn-2 {
+  border: none;
+  background-color: var(--cor-cinza);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-1 {
+  padding-left: 15%;
+  padding-right: 18%;
+}
+
+.btn-2 {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.btn-1.active,
+.btn-1:hover,
+.btn-2:hover {
+  background-color: white;
+  border: #000 1px solid;
+  border-radius: 999px;
+}
+
+/* ==================== MODAL: ESCOLHA PESSOA / EMPRESA ==================== */
+
+.img-cin-sup {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* flex: 1 divide a linha em duas colunas iguais.
+   Sem isso, o "img { width: 55% }" dentro de um item flex sem largura
+   definida encolhe e as imagens quase somem. */
+.img-cin-1,
+.img-cin-2 {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-top: 10%;
+  padding: 2%;
+  margin-left: 2%;
+  text-align: center;
+  border-radius: 2%;
+  background-color: var(--cor-cinza);
+  margin-bottom: 5%;
+}
+
+.img-cin-1 img,
+.img-cin-2 img {
+  border: 1px solid transparent; /* evita "pulo" no hover */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.img-cin-1 img:hover,
+.img-cin-2 img:hover {
+  background-color: #fff;
+  border: #000 solid 1px;
+}
+
+/* Fica depois dos dois blocos acima para funcionar em .img-cin-1 E em .img-cin-2.
+   (Antes, em .img-cin-2 ele perdia para o background-color do próprio .img-cin-2.) */
+.ative {
+  background-color: #fff;
+  border: #000 solid 1px;
+}
+
+/* ==================== FORMULÁRIOS ==================== */
+
+form {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+input[type = "text"],
+input[type = "password"],
+input[type = "submit"],
+input[type = "email"] {
+  width: 100%;
+  border-radius: 999px;
+}
+
+input[type = "submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type = "submit"]:hover {
+  background-color: #fff;
+  color: #000;
+  border: solid 1px #000;
+}
+
+.sem-senha {
+  text-align: center;
+}
+
+.escola {
+  border-radius: 999px;
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ==================== BOTÕES LOGIN / CADASTRO ==================== */
+
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px !important;   /* mesmo tamanho para todos */
+  height: 38px !important;   /* mesma altura para todos */
+  margin: 5px;
+  padding: 8px 18px !important;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: var(--cor-escura);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;       /* impede quebrar linha */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: var(--cor-escura-hover);
+  border-color: #000;
+}
+
+/* Botão selecionado: fundo branco precisa de texto escuro
+   (antes ficava texto branco sobre fundo branco). */
+.btn-custom.ativo {
+  background-color: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.btn-custom:focus-visible {
+  outline: 2px solid var(--cor-escura);
+  outline-offset: 2px;
+}
+
+.btn-link {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-link:hover {
   color: #fff;
 }
 
-.home-stat {
-  padding-left: 1.25rem;
-  border-left: 3px solid rgba(255, 255, 255, 0.3);
+/* ==================== TRANSIÇÃO SUAVE DOS FORMULÁRIOS ==================== */
+
+.formulario-container {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.home-stat-valor {
-  display: block;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 0.5rem;
+.formulario-container.login,
+.formulario-container.cadastro {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.home-stat-texto {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.05rem;
-  max-width: 28ch;
+/* ==================== UTILITÁRIOS ==================== */
+
+.aume {
+  font-size: 150%;
 }
 
-/* Motivos */
-.home-motivo {
-  border-top: 3px solid #1e1f21;
-  padding-top: 1rem;
+.preto {
+  color: #000;
+}
+
+/* Respeita quem desativa animações no sistema */
+@media (prefers-reduced-motion: reduce) {
+  .formulario-container,
+  .btn-custom,
+  .btn-1,
+  .btn-2,
+  .perfil,
+  .img-cin-1 img,
+  .img-cin-2 img,
+  input[type = "submit"] {
+    transition: none;
+  }
 }
